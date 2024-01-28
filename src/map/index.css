@@ -1,0 +1,29 @@
+.send {
+    background-image: url('/src/assets/map/textura/areia.webp');
+    background-size: cover;
+}
+
+.rocks {
+    background-image: url('/src/assets/map/textura/rocks.jpg');
+    background-size: cover;
+}
+
+.grama {
+    background-image: url('/src/assets/map/textura/grama.jpg');
+    background-size: cover;
+}
+
+.river {
+    background-image: url('/src/assets/map/textura/river.jpg');
+    background-size: cover;
+}
+
+.woots {
+    background-image: url('/src/assets/map/textura/wood.jpg');
+    background-size: cover;
+}
+
+.dirt {
+    background-image: url('/src/assets/map/textura/970ff5d0525d49ed86b19db932191c2c.webp');
+    background-size: cover;
+}
