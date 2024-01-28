@@ -68,6 +68,18 @@ export default function Map() {
       return (
         <img className={`w-[65px] ${bgGame(position)}`} src={images.house} />
       );
+    } else if (data.gato.some((p) => p === position)) {
+      return (
+        <img className={`w-[65px] ${bgGame(position)}`} src={images.gato} />
+      );
+    } else if (data.galinha.some((p) => p === position)) {
+      return (
+        <img className={`w-[65px] ${bgGame(position)}`} src={images.galinha} />
+      );
+    } else if (data.coala.some((p) => p === position)) {
+      return (
+        <img className={`w-[65px] ${bgGame(position)}`} src={images.coala} />
+      );
     } else if (data.trees4.some((p) => p === position)) {
       return (
         <img className={`w-[65px] ${bgGame(position)}`} src={images.tree4} />
@@ -198,10 +210,9 @@ export default function Map() {
   return (
     <div
       className="w-full h-full overflow-scroll rounded "
-      style={{ border: "10px dashed #470505", borderRight: "none" }}
     >
       <button
-        className="flex relative flex-wrap w-full mx-auto border-2 border-slate-800  outline-none"
+        className="flex relative h-full flex-wrap w-full mx-auto border-2 border-slate-800  outline-none"
         onKeyDown={(ev) => handleWalk(ev)}
         autoFocus
       >

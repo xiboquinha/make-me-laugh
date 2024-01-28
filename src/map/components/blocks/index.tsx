@@ -41,7 +41,7 @@ export default function Block({
   //   }
   //   return index + 1;
   // });
-  const blocks = Array.from({ length: 144 }, (v, index) => {
+  const blocks = Array.from({ length: 198 }, (v, index) => {
     if (v) {
       console.log();
     }
@@ -76,6 +76,14 @@ export default function Block({
       return <img className={`w-[65px] ${bgGame(v)}`} src={florBlue} />;
     } else if (data.girassol.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={girassol} />;
+    } else if (data.coelho.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.coelho} />;
+    } else if (data.gato.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.gato} />;
+    } else if (data.galinha.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.galinha} />;
+    } else if (data.coala.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.coala} />;
     } else if (data.house.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={house} />;
     } else if (data.house5.some((p) => p === v)) {

@@ -7,12 +7,15 @@ export const data = {
   woots: gerarSequenciaNumerica(39, 41)
     .concat(gerarSequenciaNumerica(46, 53))
     .concat(gerarSequenciaNumerica(64, 71))
-    .concat(gerarSequenciaNumerica(127, 142))
+    .concat(gerarSequenciaNumerica(127, 144))
     .concat([
-      82, 122, 555, 573, 591, 609, 117, 118, 99, 100, 45, 63, 81, 627, 112, 94,
-      104, 86, 76, 58, 28, 30, 32, 34,
+      82, 122, 555, 573, 591, 609, 117, 118, 99, 100, 63, 81, 627, 112, 94, 104,
+      86, 76, 58, 29, 31, 33, 35, 108, 90, 72, 54, 126
     ]),
-  darkWood: gerarSequenciaNumerica(10, 18),
+  darkWood: gerarSequenciaNumerica(9, 18).concat([
+    28, 30, 32, 34, 36, 45, 46, 48, 49, 50, 53, 54, 52, 1, 19, 37, 38, 6, 7, 8,
+    24, 42, 43,
+  ]),
   grama: [],
   river: gerarSequenciaNumerica(564, 575)
     .concat(gerarSequenciaNumerica(582, 593))
@@ -22,26 +25,30 @@ export const data = {
     .concat(gerarSequenciaNumerica(73, 79))
     .concat(gerarSequenciaNumerica(91, 97))
     .concat(gerarSequenciaNumerica(109, 115))
-    .concat(gerarSequenciaNumerica(119, 126))
+    .concat(gerarSequenciaNumerica(119, 125))
     .concat(gerarSequenciaNumerica(600, 611))
-    .concat([143, 144]),
+    .concat([]),
   pedraamarela: [],
   pedraverde: [],
-  sand: gerarSequenciaNumerica(1, 7)
-    .concat(gerarSequenciaNumerica(19, 24))
-    .concat([37, 38, 42, 43, 31, 33, 35, 36, 54, 72, 108, 90, 29]),
-  trees: [18],
-  trees2: [90],
-  trees3: [18],
+  sand: gerarSequenciaNumerica(2, 5)
+    .concat(gerarSequenciaNumerica(20, 23))
+    .concat([]),
+  trees: [15],
+  trees2: [13, 17],
+  trees3: [],
   trees4: [1, 6],
   arbusto: [11],
   house: [14, 4, 7],
   house2: [],
   house3: [2, 16],
-  house4: [10, 5],
+  house4: [10, 5, 18],
   house5: [12, 9, 3],
   house6: [],
   girassol: [],
+  coala: [44, 66, 129],
+  coelho: [39],
+  gato: [52],
+  galinha: [8, 90],
   blueFlower: [],
 };
 
