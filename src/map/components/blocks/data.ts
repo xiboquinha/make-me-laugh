@@ -38,12 +38,12 @@ function gerarSequenciaNumerica(inicio: number, fim: number): number[] {
     return sequencia;
 }
 
-function gerarNumerosSe(vezes: number, indicador: number) {
-    const multiplosDe18: number[] = [];
+// function gerarNumerosSe(vezes: number, indicador: number) {
+//     const multiplosDe18: number[] = [];
 
-    for (let i = 1; i <= vezes; i++) {
-        multiplosDe18.push(indicador * i);
-    }
+//     for (let i = 1; i <= vezes; i++) {
+//         multiplosDe18.push(indicador * i);
+//     }
 
-    return multiplosDe18;
-}
+//     return multiplosDe18;
+// }

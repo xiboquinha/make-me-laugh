@@ -15,7 +15,7 @@ export default function Modal({ setOpen, open }: IProps) {
                 </div >
                 <div className="bg-yellow-900 w-full h-min flex gap-3 p-2 flex-wrap items-start justify-center pt-10">
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].map((it) =>(
-                        <div className="bg-red-900 w-[80px] h-[80px] rounded-xl"></div>
+                        <div className="bg-red-900 w-[80px] h-[80px] rounded-xl">{it}</div>
                     ))}
                 </div>
             </div>
