@@ -18,6 +18,11 @@
     background-size: cover;
 }
 
+.dark-wood {
+    background-image: url('/src/assets/map/textura/DaekWood.jpg');
+    background-size: cover;
+}
+
 .woots {
     background-image: url('/src/assets/map/textura/wood.jpg');
     background-size: cover;

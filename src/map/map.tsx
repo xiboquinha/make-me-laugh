@@ -34,6 +34,8 @@ export default function Map() {
       return "send w-[65px] h-[65px]";
     } else if (data.rocks.some((n) => position === n)) {
       return "rocks w-[65px] h-[65px]";
+    } else if (data.darkWood.some((n) => position === n)) {
+      return "dark-wood w-[65px] h-[65px]";
     } else if (data.pedraverde.some((n) => position === n)) {
       return "pedra-verde w-[65px] h-[65px]";
     } else if (data.woots.some((n) => position === n)) {
@@ -86,6 +88,7 @@ export default function Map() {
       return (
         <img className={`w-[65px] ${bgGame(position)}`} src={images.house2} />
       );
+    
     } else if (data.house4.some((p) => p === position)) {
       return (
         <img className={`w-[65px] ${bgGame(position)}`} src={images.house4} />

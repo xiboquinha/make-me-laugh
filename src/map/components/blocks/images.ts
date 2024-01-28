@@ -14,6 +14,7 @@ import gramaamarela from "./../../../assets/map/textura/pedras-amarelas.webp";
 import pedraverde from "./../../../assets/map/textura/pedras-verde.webp";
 import arbusto from "./../../../assets/map/textura/arbusto.png";
 import dirt from "./../../../assets/map/textura/970ff5d0525d49ed86b19db932191c2c.webp";
+import darkWood from "./../../../assets/map/textura/DaekWood.jpg";
 import tree4 from "./../../../assets/map/textura/tree.png";
 
 export const images = {
@@ -29,6 +30,7 @@ export const images = {
   tree,
   tree2,
   tree3,
+  darkWood,
   tree4,
   gramaamarela,
   pedraverde,

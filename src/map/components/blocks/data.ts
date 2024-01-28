@@ -1,6 +1,6 @@
 export const data = {
   rocks: gerarSequenciaNumerica(163, 174).concat([
-    26, 27, 44, 62, 80, 98, 119, 101, 116, 25, 8, 83
+    26, 27, 44, 62, 80, 98, 119, 101, 116, 25, 8, 83,
   ]),
   chafaris: [],
   dirt: [],
@@ -10,8 +10,9 @@ export const data = {
     .concat(gerarSequenciaNumerica(127, 142))
     .concat([
       82, 122, 555, 573, 591, 609, 117, 118, 99, 100, 45, 63, 81, 627, 112, 94,
-      104, 86, 76, 58, 28, 30 , 32,  34,
+      104, 86, 76, 58, 28, 30, 32, 34,
     ]),
+  darkWood: gerarSequenciaNumerica(10, 18),
   grama: [],
   river: gerarSequenciaNumerica(564, 575)
     .concat(gerarSequenciaNumerica(582, 593))
@@ -28,8 +29,7 @@ export const data = {
   pedraverde: [],
   sand: gerarSequenciaNumerica(1, 7)
     .concat(gerarSequenciaNumerica(19, 24))
-    .concat(gerarSequenciaNumerica(9, 18))
-    .concat([37, 38, 42, 43, 31, 33, 35,36, 54, 72, 108, 90, 29]),
+    .concat([37, 38, 42, 43, 31, 33, 35, 36, 54, 72, 108, 90, 29]),
   trees: [18],
   trees2: [90],
   trees3: [18],
