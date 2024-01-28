@@ -39,7 +39,7 @@ export default function Hub() {
     };
 
     return (
-        <div className="w-full h-screen flex items-center flex-col hub-bg">
+        <div className="w-full h-screen flex items-center flex-col bg-yellow-600">
             {/* <div className="text-6xl font-black text-white">FAÇA O MACACO RIR !!</div> */}
             <div className="w-[1500px] mt-28 h-[540px] flex items-center justify-center">
                 <div className="max-w-[1500px] min-w-[1200px] h-full flex rounded">

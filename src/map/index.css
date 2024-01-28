@@ -4,7 +4,7 @@
 }
 
 .rocks {
-    background-image: url('/src/assets/map/textura/rocks.jpg');
+    background-image: url('/src/assets/map/textura/rocks.png');
     background-size: cover;
 }
 
@@ -25,5 +25,15 @@
 
 .dirt {
     background-image: url('/src/assets/map/textura/970ff5d0525d49ed86b19db932191c2c.webp');
+    background-size: cover;
+}
+
+.pedra-amarelo{
+    background-image: url('/src/assets/map/textura/pedras-amarelas.webp');
+    background-size: cover;
+}
+
+.pedra-verde{
+    background-image: url('/src/assets/map/textura/pedras-verde.webp');
     background-size: cover;
 }
