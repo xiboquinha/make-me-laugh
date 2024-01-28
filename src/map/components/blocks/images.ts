@@ -16,8 +16,16 @@ import arbusto from "./../../../assets/map/textura/arbusto.png";
 import dirt from "./../../../assets/map/textura/970ff5d0525d49ed86b19db932191c2c.webp";
 import darkWood from "./../../../assets/map/textura/DaekWood.jpg";
 import tree4 from "./../../../assets/map/textura/tree.png";
+import coelho from "./../../../assets/animals/coelho.png";
+import coala from "./../../../assets/animals/coala.png";
+import galinha from "./../../../assets/animals/galinha.png";
+import gato from "./../../../assets/animals/gato.png";
 
 export const images = {
+  coelho,
+  coala, 
+  galinha,
+  gato,
   florBlue,
   chafaris,
   florRosa,

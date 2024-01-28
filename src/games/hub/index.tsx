@@ -39,17 +39,17 @@ export default function Hub() {
     };
 
     return (
-        <div className="w-full h-screen flex items-center flex-col bg-yellow-600">
+        <div className="w-full h-screen flex items-center flex-col bg-yellow-700">
             {/* <div className="text-6xl font-black text-white">FAÇA O MACACO RIR !!</div> */}
-            <div className="w-[1500px] mt-28 h-[540px] flex items-center justify-center">
-                <div className="max-w-[1500px] min-w-[1200px] h-full flex rounded">
+            <div className="w-[1500px] mt-28 h-[700px] flex items-center justify-center">
+                <div   style={{ border: "10px dashed #470505" }} className="max-w-[1500px] min-w-[1200px] h-full flex rounded bg-yellow-900">
                     <div className="relative text-sm text-gray-100 w-5/6 rounded-lg">
                         <audio className="hidden" id="audioPlayer" controls>
                             <source src={audioBg} type="audio/mp3" />
                             Your browser does not support the audio element.
                         </audio>
                         {!isPlaying ?
-                            <div className="mx-auto w- h-5/6 flex items-center justify-center">
+                            <div className="mx-auto w- h-full flex items-center justify-center">
                                 <button className={"bg-blue-400 w-3/12 rounded-lg p-4"} onClick={() => togglePlay()}>
                                     START
                                 </button>
