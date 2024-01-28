@@ -7,6 +7,7 @@ import left from "./../assets/chars/walk-left.png";
 import Block from "./components/blocks";
 import { data } from "./components/blocks/data";
 import { images } from "./components/blocks/images";
+import { useItem } from "../GameProvider";
 
 export default function Map() {
   const lastRef = useRef<null | HTMLDivElement>(null);
@@ -25,6 +26,8 @@ export default function Map() {
       }
     }
   };
+
+  const { addItem } = useItem();
 
   const [charImg, setCharImg] = useState(walk1);
   const [walk, setWalk] = useState(119);
@@ -100,7 +103,6 @@ export default function Map() {
       return (
         <img className={`w-[65px] ${bgGame(position)}`} src={images.house2} />
       );
-    
     } else if (data.house4.some((p) => p === position)) {
       return (
         <img className={`w-[65px] ${bgGame(position)}`} src={images.house4} />
@@ -164,12 +166,20 @@ export default function Map() {
   function handleWalk(event: React.KeyboardEvent<HTMLButtonElement>) {
     if (event.keyCode === 39 || event.keyCode === 68) {
       // right
-      console.log(findImage(walk + 1))
+      console.log(findImage(walk + 1));
       if (walk + 1 < 644 && findImage(walk + 1) == null) {
         handleChar("right");
         setWalk(walk + 1);
         if (walk + 1 === 70) {
-          alert("ITEM FOUNDED");
+          addItem("cigarro");
+        } else if (walk + 1 === 116) {
+          addItem("casca");
+        } else if (walk + 1 === 126) {
+          addItem("banana");
+        } else if (walk + 1 === 40) {
+          addItem("muda");
+        } else if (walk + 1 === 156) {
+          addItem("marreta");
         }
       }
     }
@@ -179,7 +189,15 @@ export default function Map() {
       if (walk - 1 > 0 && findImage(walk - 1) == null) {
         setWalk(walk - 1);
         if (walk - 1 === 70) {
-          alert("ITEM FOUNDED");
+          addItem("cigarro");
+        } else if (walk - 1 === 116) {
+          addItem("casca");
+        } else if (walk - 1 === 126) {
+          addItem("banana");
+        } else if (walk - 1 === 40) {
+          addItem("muda");
+        } else if (walk - 1 === 156) {
+          addItem("marreta");
         }
       }
     }
@@ -190,27 +208,41 @@ export default function Map() {
         scrollToBottom("down");
         setWalk(walk + 18);
         if (walk + 18 === 70) {
-          alert("ITEM FOUNDED");
+          addItem("cigarro");
+        } else if (walk + 18 === 116) {
+          addItem("casca");
+        } else if (walk + 18 === 126) {
+          addItem("banana");
+        } else if (walk + 18 === 40) {
+          addItem("muda");
+        } else if (walk + 18 === 156) {
+          addItem("marreta");
         }
       }
     }
     if (event.keyCode === 38 || event.keyCode === 87) {
       //up
       handleChar("up");
-      if (walk - 18 > 0 && findImage(walk -18) == null) {
+      if (walk - 18 > 0 && findImage(walk - 18) == null) {
         scrollToBottom("up");
         setWalk(walk - 18);
         if (walk - 18 === 70) {
-          alert("ITEM FOUNDED");
+          addItem("cigarro");
+        } else if (walk - 18 === 116) {
+          addItem("casca");
+        } else if (walk - 18 === 126) {
+          addItem("banana");
+        } else if (walk - 18 === 40) {
+          addItem("muda");
+        } else if (walk - 18 === 156) { 
+          addItem("marreta");
         }
       }
     }
   }
 
   return (
-    <div
-      className="w-full h-full overflow-scroll rounded "
-    >
+    <div className="w-full h-full overflow-scroll rounded ">
       <button
         className="flex relative h-full flex-wrap w-full mx-auto border-2 border-slate-800  outline-none"
         onKeyDown={(ev) => handleWalk(ev)}

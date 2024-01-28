@@ -11,7 +11,7 @@ import tree from "./../../../assets/map/textura/tree.gif";
 import tree2 from "./../../../assets/map/textura/tree2.png";
 import tree3 from "./../../../assets/map/textura/tree.webp";
 import arbusto from "./../../../assets/map/textura/arbusto.png";
-import girassol from "./../../../assets/map/textura/girassol.png"
+import girassol from "./../../../assets/map/textura/girassol.png";
 import dirt from "./../../../assets/map/textura/970ff5d0525d49ed86b19db932191c2c.webp";
 
 import { data } from "./data";
@@ -67,8 +67,7 @@ export default function Block({
           {findImage(walk + 18)}
         </div>
       );
-    }
-    else if (data.chafaris.some((p) => p === v)) {
+    } else if (data.chafaris.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={chafaris} />;
     } else if ([].some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={florRosa} />;
@@ -108,6 +107,16 @@ export default function Block({
       return <img className={`w-[65px] ${bgGame(v)}`} src={tree3} />;
     } else if (data.house6.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={house6} />;
+    } else if (v === 70) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.cigarro} />; 
+    } else if (v === 40) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.muda} />; 
+    } else if (v === 116) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.casca} />; 
+    } else if (v === 126) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.banana} />; 
+    } else if (v === 156) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.marreta} />; 
     } else {
       return <div className={"text-black text-[11px] " + bgGame(v)}>{v}</div>;
     }

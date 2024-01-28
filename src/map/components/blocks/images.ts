@@ -20,9 +20,19 @@ import coelho from "./../../../assets/animals/coelho.png";
 import coala from "./../../../assets/animals/coala.png";
 import galinha from "./../../../assets/animals/galinha.png";
 import gato from "./../../../assets/animals/gato.png";
+import cigarro from "./../../../assets/ItensMacaco/cigarro.png";
+import casca from "./../../../assets/ItensMacaco/casca banana.jpg";
+import banana from "./../../../assets/ItensMacaco/bfd3e1760ab121d.png";
+import marreta from "./../../../assets/ItensMacaco/marreta__MConverter.eu_-removebg-preview.png";
+import muda from "./../../../assets/ItensMacaco/muda.webp";
 
 export const images = {
   coelho,
+  casca,
+  banana,
+  muda,
+  marreta,
+  cigarro,
   coala, 
   galinha,
   gato,
