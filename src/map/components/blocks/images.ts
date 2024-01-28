@@ -25,9 +25,15 @@ import casca from "./../../../assets/ItensMacaco/casca banana.jpg";
 import banana from "./../../../assets/ItensMacaco/bfd3e1760ab121d.png";
 import marreta from "./../../../assets/ItensMacaco/marreta__MConverter.eu_-removebg-preview.png";
 import muda from "./../../../assets/ItensMacaco/muda.webp";
+import whale from "./../../../assets/animals/whale.jpg";
+import crab from "./../../../assets/animals/crab.jpg";
+import porco from "./../../../assets/animals/porco.png";
 
 export const images = {
   coelho,
+  whale,
+  porco,  
+  crab,
   casca,
   banana,
   muda,

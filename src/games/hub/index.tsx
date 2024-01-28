@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import pensive from "./../../assets/chars/pensive.png";
 import Map from "../../map/map";
 import inventary from "./../../assets/components/inventary.png";
@@ -8,14 +8,15 @@ import menu from "./../../assets/components/menu.png";
 import resume from "./../../assets/components/resume.png";
 import soundOn from "./../../assets/components/sound.png";
 import soundOff from "./../../assets/components//sound-off.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "../../map/components/modal";
 import { useItem } from "../../GameProvider";
 
 export default function Hub() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
-  const { items } = useItem();
+  const navigate = useNavigate();
+  const { items, happiness, handleHappiness, addItem } = useItem();
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [mute, setMute] = useState(false);
@@ -39,10 +40,19 @@ export default function Hub() {
     }
   };
 
+  useEffect(() => {
+    if (happiness < 0) {
+      alert("you loose");
+      handleHappiness(0);
+      addItem("", true);
+      navigate("/");
+    } 
+  }, [happiness]);
+
   return (
     <div className="w-full h-screen flex items-center flex-col bg-yellow-700">
       {/* <div className="text-6xl font-black text-white">FAÇA O MACACO RIR !!</div> */}
-      <div className="w-[1500px] mt-28 h-[700px] flex items-center justify-center">
+      <div className="w-[1500px] h-[90%]  mt-16 flex items-center justify-center">
         <div
           style={{ border: "10px dashed #470505" }}
           className="max-w-[1500px] min-w-[1200px] h-full flex rounded bg-yellow-900"
@@ -105,11 +115,20 @@ export default function Hub() {
             />
           </div>
           <div className="w-1/12 flex items-center justify-center">
+            {happiness}
             <div
               style={{ border: "3px solid rgb(180 83 9)" }}
-              className="h-[90%] w-5/6 rounded-full relative"
+              className="h-[90%] relative w-5/6 rounded-full bg-gradient-to-r from-green-500 via-blue-500 to-indigo-500 overflow-hidden"
             >
-              <img className=" absolute bottom-0" src={pensive} />
+              <div
+                style={{ bottom: `${happiness}px` }}
+                className="w-full h-full bg-red-900  absolute"
+              ></div>
+              <img
+                style={{ bottom: `${happiness}px` }}
+                className={`absolute `}
+                src={pensive}
+              />
             </div>
           </div>
         </div>

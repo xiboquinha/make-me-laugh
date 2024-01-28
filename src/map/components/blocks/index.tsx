@@ -41,7 +41,7 @@ export default function Block({
   //   }
   //   return index + 1;
   // });
-  const blocks = Array.from({ length: 198 }, (v, index) => {
+  const blocks = Array.from({ length: 648 }, (v, index) => {
     if (v) {
       console.log();
     }
@@ -103,6 +103,10 @@ export default function Block({
       return <img className={`w-[65px] ${bgGame(v)}`} src={house3} />;
     } else if (data.trees2.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={tree2} />;
+    } else if (data.whale.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.whale} />;
+    } else if (data.crab.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.crab} />;
     } else if (data.trees3.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={tree3} />;
     } else if (data.house6.some((p) => p === v)) {
@@ -118,7 +122,7 @@ export default function Block({
     } else if (v === 156) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.marreta} />; 
     } else {
-      return <div className={"text-black text-[11px] " + bgGame(v)}></div>;
+      return <div className={"text-black text-[11px] " + bgGame(v)}>{v}</div>;
     }
   });
 }

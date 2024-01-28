@@ -2,7 +2,9 @@ import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface GameContextProps {
   items: string[];
-  addItem: (item: string) => void;
+  happiness: number;
+  handleHappiness: (item: number) => void;
+  addItem: (points: string, clean?:  boolean) => void;
 }
 
 const GameContext = createContext<GameContextProps | undefined>(undefined);
@@ -21,17 +23,28 @@ interface GameProviderProps {
 
 export const GameProvider: React.FC<GameProviderProps> = ({ children }) => {
   const [items, setItems] = useState<string[]>([]);
+  const [happiness, setHappiness] = useState(0);
 
-  const addItem = (item: string) => {
+  const addItem = (item: string, clear?: boolean) => {
     if (items.some((it) => it === item)) {
     } else {
       setItems([...items, item]);
     }
+
+    if(clear){
+      setItems([])
+    }
   };
+
+  function handleHappiness(point: number) {
+    setHappiness(point);
+  }
 
   const contextValue: GameContextProps = {
     items,
     addItem,
+    handleHappiness,
+    happiness,
   };
 
   return (
