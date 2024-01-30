@@ -123,9 +123,31 @@ export default function Map() {
       return (
         <img className={`w-[65px] ${bgGame(position)}`} src={images.tree3} />
       );
+    } else if (data.woodHalf.some((p) => p === position)) {
+      return <img className={`w-[65px] ${bgGame(position)}`} src={images.woodHalf} />;
+    } else if (data.darkwoodHalf.some((p) => p === position)) {
+      return (
+        <img className={`w-[65px] ${bgGame(position)}`} src={images.darkwoodHalf} />
+      );
     } else if (data.house6.some((p) => p === position)) {
       return (
         <img className={`w-[65px] ${bgGame(position)}`} src={images.house6} />
+      );
+    } else if (position == 228) {
+      return (
+        <img className={`w-[65px] ${bgGame(position)}`} src={images.school1} />
+      );
+    } else if (position === 246) {
+      return (
+        <img className={`w-[65px] ${bgGame(position)}`} src={images.school2} />
+      );
+    } else if (position === 229) {
+      return (
+        <img className={`w-[65px] ${bgGame(position)}`} src={images.school3} />
+      );
+    } else if (position === 247) {
+      return (
+        <img className={`w-[65px] ${bgGame(position)}`} src={images.school4} />
       );
     } else if (data.pedraamarela.some((p) => p === position)) {
       return (
@@ -234,7 +256,7 @@ export default function Map() {
           addItem("banana");
         } else if (walk - 18 === 40) {
           addItem("muda");
-        } else if (walk - 18 === 156) { 
+        } else if (walk - 18 === 156) {
           addItem("marreta");
         }
       }

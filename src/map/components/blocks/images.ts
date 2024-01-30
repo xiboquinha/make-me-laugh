@@ -1,4 +1,4 @@
-import florBlue from "./../../../assets/map/constructions/flor-blue.png";
+import florBlue from "./../../../assets/map/textura/florazul__MConverter.eu_-removebg-preview.png";
 import chafaris from "./../../../assets/map/constructions/chafaris.gif";
 import florRosa from "./../../../assets/map/textura/flor.png";
 import house from "./../../../assets/map/constructions/house-1.png";
@@ -21,22 +21,38 @@ import coala from "./../../../assets/animals/coala.png";
 import galinha from "./../../../assets/animals/galinha.png";
 import gato from "./../../../assets/animals/gato.png";
 import cigarro from "./../../../assets/ItensMacaco/cigarro.png";
-import casca from "./../../../assets/ItensMacaco/casca banana.jpg";
+import casca from "./../../../assets/ItensMacaco/casca banana.png";
 import banana from "./../../../assets/ItensMacaco/bfd3e1760ab121d.png";
 import marreta from "./../../../assets/ItensMacaco/marreta__MConverter.eu_-removebg-preview.png";
 import muda from "./../../../assets/ItensMacaco/muda.webp";
-import whale from "./../../../assets/animals/whale.jpg";
-import crab from "./../../../assets/animals/crab.jpg";
+import whale from "./../../../assets/animals/whale.png";
+import house7 from "./../../../assets/map/constructions/house7.png";
+import crab from "./../../../assets/animals/crab.png";
+import estatua2 from "./../../../assets/map/constructions/estatua2.png"
 import porco from "./../../../assets/animals/porco.png";
+import school1 from "./../../../assets/map/constructions/00.png";
+import school2 from "./../../../assets/map/constructions/01.png";
+import school3 from "./../../../assets/map/constructions/10.png";
+import school4 from "./../../../assets/map/constructions/11.png";
+import woodHalf from "./../../../assets/map/textura/wood-half.png";
+import darkwoodHalf from "./../../../assets/map/textura/wood-half.jpg";
 
 export const images = {
+  school1,
+  school2,
+  school3,
+  school4,
+  woodHalf,
+  darkwoodHalf,
   coelho,
   whale,
+  estatua2,
   porco,  
   crab,
   casca,
   banana,
   muda,
+  house7,
   marreta,
   cigarro,
   coala, 

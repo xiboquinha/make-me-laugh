@@ -1,4 +1,3 @@
-import florBlue from "./../../../assets/map/constructions/flor-blue.png";
 import chafaris from "./../../../assets/map/constructions/chafaris.gif";
 import florRosa from "./../../../assets/map/textura/flor.png";
 import house from "./../../../assets/map/constructions/house-1.png";
@@ -72,7 +71,7 @@ export default function Block({
     } else if ([].some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={florRosa} />;
     } else if (data.blueFlower.some((p) => p === v)) {
-      return <img className={`w-[65px] ${bgGame(v)}`} src={florBlue} />;
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.florBlue} />;
     } else if (data.girassol.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={girassol} />;
     } else if (data.coelho.some((p) => p === v)) {
@@ -111,18 +110,34 @@ export default function Block({
       return <img className={`w-[65px] ${bgGame(v)}`} src={tree3} />;
     } else if (data.house6.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={house6} />;
+    } else if (data.woodHalf.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.woodHalf} />;
+    } else if (data.darkwoodHalf.some((p) => p === v)) {
+      return  <img className={`w-[65px] ${bgGame(v)}`} src={images.darkwoodHalf} />
     } else if (v === 70) {
-      return <img className={`w-[65px] ${bgGame(v)}`} src={images.cigarro} />; 
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.cigarro} />;
     } else if (v === 40) {
-      return <img className={`w-[65px] ${bgGame(v)}`} src={images.muda} />; 
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.muda} />;
+    } else if (v === 286) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.estatua2} />;
+    } else if (v === 232) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.house7} />;
     } else if (v === 116) {
-      return <img className={`w-[65px] ${bgGame(v)}`} src={images.casca} />; 
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.casca} />;
     } else if (v === 126) {
-      return <img className={`w-[65px] ${bgGame(v)}`} src={images.banana} />; 
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.banana} />;
     } else if (v === 156) {
-      return <img className={`w-[65px] ${bgGame(v)}`} src={images.marreta} />; 
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.marreta} />;
+    } else if (v == 228) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.school1} />;
+    } else if (v === 246) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.school2} />;
+    } else if (v === 229) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.school3} />;
+    } else if (v === 247) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.school4} />;
     } else {
-      return <div className={"text-black text-[11px] " + bgGame(v)}></div>;
+      return <div className={"text-black text-[11px] " + bgGame(v)}>{v}</div>;
     }
   });
 }
