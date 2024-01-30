@@ -266,7 +266,7 @@ export default function Map() {
   }
 
   return (
-    <div className="w-full h-full overflow-scroll rounded ">
+    <div className="max-w-[1200px] h-full overflow-scroll rounded ">
       <button
         className="flex relative h-full flex-wrap w-full mx-auto border-2 border-slate-800  outline-none"
         onKeyDown={(ev) => handleWalk(ev)}

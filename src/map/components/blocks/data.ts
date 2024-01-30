@@ -21,6 +21,7 @@ export const data = {
   woots: gerarSequenciaNumerica(39, 41)
     .concat(gerarSequenciaNumerica(46, 53))
     .concat(gerarSequenciaNumerica(559, 576))
+    .concat(gerarSequenciaNumerica(361, 366))
     .concat(gerarSequenciaNumerica(282, 284))
     .concat(gerarSequenciaNumerica(64, 71))
     .concat(gerarSequenciaNumerica(289, 294))

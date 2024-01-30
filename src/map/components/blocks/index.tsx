@@ -142,7 +142,7 @@ export default function Block({
     } else if (v === 247) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.school4} />;
     } else {
-      return <div className={"text-white text-[8px] " + bgGame(v)}>{v}</div>;
+      return <div className={"text-white text-[8px] " + bgGame(v)}></div>;
     }
   });
 }
