@@ -122,7 +122,7 @@ export default function Block({
     } else if (v === 156) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.marreta} />; 
     } else {
-      return <div className={"text-black text-[11px] " + bgGame(v)}>{v}</div>;
+      return <div className={"text-black text-[11px] " + bgGame(v)}></div>;
     }
   });
 }

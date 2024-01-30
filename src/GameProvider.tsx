@@ -4,7 +4,7 @@ interface GameContextProps {
   items: string[];
   happiness: number;
   handleHappiness: (item: number) => void;
-  addItem: (points: string, clean?:  boolean) => void;
+  addItem: (points: string, clean?: boolean) => void;
 }
 
 const GameContext = createContext<GameContextProps | undefined>(undefined);
@@ -31,8 +31,8 @@ export const GameProvider: React.FC<GameProviderProps> = ({ children }) => {
       setItems([...items, item]);
     }
 
-    if(clear){
-      setItems([])
+    if (clear) {
+      setItems([]);
     }
   };
 
