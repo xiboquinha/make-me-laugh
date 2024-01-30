@@ -118,7 +118,7 @@ export default function Block({
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.cigarro} />;
     } else if (v === 40) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.muda} />;
-    } else if (v === 286) {
+    } else if (data.estatua.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.estatua2} />;
     } else if (v === 232) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.house7} />;
@@ -137,7 +137,7 @@ export default function Block({
     } else if (v === 247) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.school4} />;
     } else {
-      return <div className={"text-black text-[11px] " + bgGame(v)}>{v}</div>;
+      return <div className={"text-black text-[11px] " + bgGame(v)}></div>;
     }
   });
 }
