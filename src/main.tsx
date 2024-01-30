@@ -6,6 +6,7 @@ import { GameProvider } from './GameProvider.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <GameProvider>
+    
     <App />
  </GameProvider>,
 )

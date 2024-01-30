@@ -7,6 +7,7 @@ import audioBg from "./../../assets/audio/Pixel Tunes (Royalty Free Game Music P
 import menu from "./../../assets/components/menu.png";
 import resume from "./../../assets/components/resume.png";
 import soundOn from "./../../assets/components/sound.png";
+import question from "./../../assets/components/question.png";
 import soundOff from "./../../assets/components//sound-off.png";
 import { useEffect, useState } from "react";
 import Modal from "../../map/components/modal";
@@ -14,6 +15,7 @@ import { useItem } from "../../GameProvider";
 
 export default function Hub() {
   const [open, setOpen] = useState(false);
+  const [type, setType] = useState<'question' | 'inventary'>('question');
   const location = useLocation();
   const navigate = useNavigate();
   const { items, happiness, handleHappiness, addItem } = useItem();
@@ -46,7 +48,7 @@ export default function Hub() {
       handleHappiness(0);
       addItem("", true);
       navigate("/");
-    } 
+    }
   }, [happiness]);
 
   return (
@@ -76,7 +78,7 @@ export default function Hub() {
             )}
             <span className="left-[-6px] absolute top-[-60px] z-[9999] flex gap-3">
               <img
-                onClick={() => setOpen(true)}
+                onClick={() => { setOpen(true); setType('inventary') }}
                 className="w-[50px] rounded  cursor-pointer hover:bg-yellow-400"
                 src={menu}
               />
@@ -95,7 +97,7 @@ export default function Hub() {
                   </span>
                 )}
                 <img
-                  onClick={() => setOpen(true)}
+                   onClick={() => { setOpen(true); setType('inventary') }}
                   className="w-[50px]  rounded cursor-pointer hover:bg-yellow-400"
                   src={inventary}
                 />
@@ -104,6 +106,11 @@ export default function Hub() {
                 onClick={() => toggleMute()}
                 className="w-[50px] rounded cursor-pointer hover:bg-yellow-400"
                 src={mute ? soundOn : soundOff}
+              />
+              <img
+                onClick={() => { setOpen(true); setType('question') }}
+                className="w-[50px] rounded cursor-pointer hover:bg-yellow-400"
+                src={question}
               />
             </span>
           </div>
@@ -133,7 +140,7 @@ export default function Hub() {
           </div>
         </div>
       </div>
-      <Modal setOpen={setOpen} open={open} />
+      <Modal type={type} setOpen={setOpen} open={open} />
     </div>
   );
 }

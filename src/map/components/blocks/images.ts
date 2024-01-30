@@ -36,13 +36,21 @@ import school3 from "./../../../assets/map/constructions/10.png";
 import school4 from "./../../../assets/map/constructions/11.png";
 import woodHalf from "./../../../assets/map/textura/wood-half.png";
 import darkwoodHalf from "./../../../assets/map/textura/wood-half.jpg";
+import robot from "./../../../assets/decoration/robot.gif";
+import skeleton from "./../../../assets/decoration/skeleton.png";
+import plant from "./../../../assets/decoration/plant.gif";
+import treeDecoration from "./../../../assets/decoration/tree.png";
 
 export const images = {
   school1,
   school2,
+  plant,
+  treeDecoration,
+  skeleton,
   school3,
   school4,
   woodHalf,
+  robot,
   darkwoodHalf,
   coelho,
   whale,

@@ -1,5 +1,4 @@
 import chafaris from "./../../../assets/map/constructions/chafaris.gif";
-import florRosa from "./../../../assets/map/textura/flor.png";
 import house from "./../../../assets/map/constructions/house-1.png";
 import house2 from "./../../../assets/map/constructions/house-2.png";
 import house3 from "./../../../assets/map/constructions/house-3.png";
@@ -16,6 +15,7 @@ import dirt from "./../../../assets/map/textura/970ff5d0525d49ed86b19db932191c2c
 import { data } from "./data";
 import { ReactNode } from "react";
 import { images } from "./images";
+import { useItem } from "../../../GameProvider";
 
 interface IProps {
   walk: number;
@@ -34,18 +34,16 @@ export default function Block({
   bgGame,
   findImage,
 }: IProps) {
-  // const blocks = Array.from({ length: 648 }, (v, index) => {
-  //   if (v) {
-  //     console.log();
-  //   }
-  //   return index + 1;
-  // });
+
+  const { items } = useItem();
+
   const blocks = Array.from({ length: 648 }, (v, index) => {
     if (v) {
       console.log();
     }
     return index + 1;
   });
+
 
   return blocks.map((v) => {
     if (v === walk) {
@@ -54,7 +52,8 @@ export default function Block({
           <img className="w-full h-full z-999" src={charImg} />
         </div>
       );
-    } else if (v === walk - 18) {
+    }
+    else if (v === walk - 18) {
       return (
         <div ref={upRef} className={`w-[65px] h-[65px] ${bgGame(walk - 18)}`}>
           {findImage(walk - 18)}
@@ -68,8 +67,12 @@ export default function Block({
       );
     } else if (data.chafaris.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={chafaris} />;
-    } else if ([].some((p) => p === v)) {
-      return <img className={`w-[65px] ${bgGame(v)}`} src={florRosa} />;
+    } else if (data.skeleton.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.skeleton} />;
+    } else if (data.plant.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.plant} />;
+    } else if (data.treeDecoration.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.treeDecoration} />;
     } else if (data.blueFlower.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.florBlue} />;
     } else if (data.girassol.some((p) => p === v)) {
@@ -112,23 +115,25 @@ export default function Block({
       return <img className={`w-[65px] ${bgGame(v)}`} src={house6} />;
     } else if (data.woodHalf.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.woodHalf} />;
+    } else if (data.robot.some((p) => p === v)) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.robot} />;
     } else if (data.darkwoodHalf.some((p) => p === v)) {
-      return  <img className={`w-[65px] ${bgGame(v)}`} src={images.darkwoodHalf} />
-    } else if (v === 70) {
+      return <img className={`w-[65px] ${bgGame(v)}`} src={images.darkwoodHalf} />
+    } else if (v === 70  && !items.some((cas) => cas === 'cigarro')) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.cigarro} />;
-    } else if (v === 40) {
+    } else if (v === 40  && !items.some((cas) => cas === 'muda')) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.muda} />;
     } else if (data.estatua.some((p) => p === v)) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.estatua2} />;
     } else if (v === 232) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.house7} />;
-    } else if (v === 116) {
+    } else if (v === 116 && !items.some((cas) => cas === 'casca')) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.casca} />;
-    } else if (v === 126) {
+    } else if (v === 126  && !items.some((cas) => cas === 'banana')) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.banana} />;
-    } else if (v === 156) {
+    } else if (v === 156  && !items.some((cas) => cas === 'marreta')) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.marreta} />;
-    } else if (v == 228) {
+    } else if (v == 228 ) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.school1} />;
     } else if (v === 246) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.school2} />;
@@ -137,7 +142,7 @@ export default function Block({
     } else if (v === 247) {
       return <img className={`w-[65px] ${bgGame(v)}`} src={images.school4} />;
     } else {
-      return <div className={"text-black text-[11px] " + bgGame(v)}></div>;
+      return <div className={"text-white text-[8px] " + bgGame(v)}>{v}</div>;
     }
   });
 }

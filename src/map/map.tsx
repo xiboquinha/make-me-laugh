@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { Alert, Dialog, Button } from '@mui/material';
 import walk1 from "./../assets/chars/mokey-walk-1.png";
 import as from "./../assets/chars/walking-right.png";
 import down from "./../assets/chars/walk-down.png";
@@ -12,6 +13,7 @@ import { useItem } from "../GameProvider";
 export default function Map() {
   const lastRef = useRef<null | HTMLDivElement>(null);
   const upRef = useRef<null | HTMLDivElement>(null);
+  const { items } = useItem();
 
   const scrollToBottom = (direction: "up" | "down") => {
     if (direction == "up") {
@@ -28,7 +30,7 @@ export default function Map() {
   };
 
   const { addItem } = useItem();
-
+  const [notification, setNotification] = useState({ open: false, content: '' });
   const [charImg, setCharImg] = useState(walk1);
   const [walk, setWalk] = useState(119);
 
@@ -193,15 +195,15 @@ export default function Map() {
         handleChar("right");
         setWalk(walk + 1);
         if (walk + 1 === 70) {
-          addItem("cigarro");
+          handleFoundItem('cigarro', items, setNotification, addItem);
         } else if (walk + 1 === 116) {
-          addItem("casca");
+          handleFoundItem('casca', items, setNotification, addItem);
         } else if (walk + 1 === 126) {
-          addItem("banana");
+          handleFoundItem('banana', items, setNotification, addItem);
         } else if (walk + 1 === 40) {
-          addItem("muda");
+          handleFoundItem('muda', items, setNotification, addItem);
         } else if (walk + 1 === 156) {
-          addItem("marreta");
+          handleFoundItem('marreta', items, setNotification, addItem);
         }
       }
     }
@@ -211,15 +213,15 @@ export default function Map() {
       if (walk - 1 > 0 && findImage(walk - 1) == null) {
         setWalk(walk - 1);
         if (walk - 1 === 70) {
-          addItem("cigarro");
+          handleFoundItem('cigarro', items, setNotification, addItem);
         } else if (walk - 1 === 116) {
-          addItem("casca");
+          handleFoundItem('casca', items, setNotification, addItem);
         } else if (walk - 1 === 126) {
-          addItem("banana");
+          handleFoundItem('banana', items, setNotification, addItem);
         } else if (walk - 1 === 40) {
-          addItem("muda");
+          handleFoundItem('muda', items, setNotification, addItem);
         } else if (walk - 1 === 156) {
-          addItem("marreta");
+          handleFoundItem('marreta', items, setNotification, addItem);
         }
       }
     }
@@ -230,15 +232,15 @@ export default function Map() {
         scrollToBottom("down");
         setWalk(walk + 18);
         if (walk + 18 === 70) {
-          addItem("cigarro");
+          handleFoundItem('cigarro', items, setNotification, addItem);
         } else if (walk + 18 === 116) {
-          addItem("casca");
+          handleFoundItem('casca', items, setNotification, addItem);
         } else if (walk + 18 === 126) {
-          addItem("banana");
+          handleFoundItem('banana', items, setNotification, addItem);
         } else if (walk + 18 === 40) {
-          addItem("muda");
+          handleFoundItem('muda', items, setNotification, addItem);
         } else if (walk + 18 === 156) {
-          addItem("marreta");
+          handleFoundItem('marreta', items, setNotification, addItem);
         }
       }
     }
@@ -249,15 +251,15 @@ export default function Map() {
         scrollToBottom("up");
         setWalk(walk - 18);
         if (walk - 18 === 70) {
-          addItem("cigarro");
+          handleFoundItem('cigarro', items, setNotification, addItem);
         } else if (walk - 18 === 116) {
-          addItem("casca");
+          handleFoundItem('casca', items, setNotification, addItem);
         } else if (walk - 18 === 126) {
-          addItem("banana");
+          handleFoundItem('banana', items, setNotification, addItem);
         } else if (walk - 18 === 40) {
-          addItem("muda");
+          handleFoundItem('muda', items, setNotification, addItem);
         } else if (walk - 18 === 156) {
-          addItem("marreta");
+          handleFoundItem('marreta', items, setNotification, addItem);
         }
       }
     }
@@ -270,6 +272,14 @@ export default function Map() {
         onKeyDown={(ev) => handleWalk(ev)}
         autoFocus
       >
+        <Dialog open={notification.open} className="gap-2">
+          <Alert className="uppercase" variant="filled" severity="info">
+            {notification.content}
+          </Alert>
+          <Button onClick={() => setNotification({ content: '', open: false })} size={'small'} className="mt-2" color={'info'}>
+            OK
+          </Button>
+        </Dialog>
         <Block
           bgGame={bgGame}
           findImage={findImage}
@@ -281,4 +291,12 @@ export default function Map() {
       </button>
     </div>
   );
+}
+
+
+function handleFoundItem(item: string, items: string[], setNotification: any, addItem: any) {
+  if (!items.some((cas) => cas === item)) {
+    setNotification({ open: true, content: item + '  FOUNDED!' })
+    addItem(item);
+  }
 }

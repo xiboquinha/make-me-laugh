@@ -23,15 +23,17 @@ export const data = {
     .concat(gerarSequenciaNumerica(559, 576))
     .concat(gerarSequenciaNumerica(282, 284))
     .concat(gerarSequenciaNumerica(64, 71))
+    .concat(gerarSequenciaNumerica(289, 294))
     .concat(gerarSequenciaNumerica(217, 222))
     .concat(generateNumberArray(143, 369))
+    .concat(generateNumberArray(256, 400))
     .concat(generateNumberArray(130, 220))
     .concat(generateNumberArray(267, 339))
     .concat(gerarSequenciaNumerica(127, 144))
     .concat(gerarSequenciaNumerica(230, 233))
     .concat([
       122, 555, 573, 591, 609, 117, 99, 63, 81, 627, 112, 94, 104,
-       86, 76, 58, 236, 253, 255, 238, 240, 257, 259,
+      86, 76, 58, 236, 253, 255, 238, 240, 257, 259,
       29, 31, 33, 35, 108, 90, 72, 54, 126, 340, 200, 185, 186,
     ]),
   darkWood: gerarSequenciaNumerica(9, 18)
@@ -60,7 +62,8 @@ export const data = {
   pedraamarela: generateNumberArray(141, 213)
     .concat(generateNumberArray(142, 214))
     .concat(generateNumberArray(137, 209))
-    .concat([158, 210, 211, 212,235, 237, 239, 241]),
+    .concat([158, 210, 211, 212, 235, 237, 239, 241,
+      254, 256, 258, 271, 273, 275]),
   pedraverde: [163, 164, 165, 183, 182, 181, 201, 199],
   sand: gerarSequenciaNumerica(2, 5)
     .concat(gerarSequenciaNumerica(20, 23))
@@ -70,11 +73,11 @@ export const data = {
   blueFlower: [158],
   // Tree
   trees: [15],
-  trees2: [13, 17, 159, 167, 168, 169, 203, 204, 314, 315, 
-     297, 279, 333, 351, 369],
+  trees2: [13, 17, 159, 167, 168, 169, 203, 204, 314, 315,
+    297, 279, 333, 351, 369],
   trees3: [],
   trees4: [1, 183, 181, 6, 163, 164, 165, 295, 313, 277, 278,
-  331, 349, 367, 350],
+    331, 349, 367, 350],
   // House
   house: [14, 4, 7],
   house2: [],
@@ -92,6 +95,10 @@ export const data = {
   galinha: [8, 90, 201],
   //statua
   estatua: [296, 332, 368],
+  robot: [225],
+  treeDecoration: [145],
+  plant: [36],
+  skeleton: [37]
 };
 
 function gerarSequenciaNumerica(inicio: number, fim: number): number[] {
